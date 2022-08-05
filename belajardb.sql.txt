@@ -1,0 +1,99 @@
+Microsoft Windows [Version 10.0.19044.1645]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Zyrex>cd..
+
+C:\Users>cd..
+
+C:\>cd
+C:\
+
+C:\>cd xampp
+
+C:\Xampp>cd mysql
+
+C:\Xampp\mysql>cd bin
+
+C:\Xampp\mysql\bin>-u root -p
+'-u' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 10.4.24-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+5 rows in set (0.002 sec)
+
+MariaDB [(none)]> CREATE DATABASE EGAN ;
+Query OK, 1 row affected (0.009 sec)
+
+MariaDB [(none)]> SHOW DATABASES
+    -> SHOW DATABASES ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SHOW DATABASES' at line 2
+MariaDB [(none)]> SHOW DATABASES ;
++--------------------+
+| Database           |
++--------------------+
+| egan               |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.002 sec)
+
+MariaDB [(none)]> USE EGAN ;
+Database changed
+MariaDB [EGAN]> show tables ;
+Empty set (0.004 sec)
+
+MariaDB [EGAN]> create table tbl_siswa (id_siswa varchar(5), nama_siswa varchar (50), alamat varchar(100), primary key (id_siswa));
+Query OK, 0 rows affected (0.074 sec)
+
+MariaDB [EGAN]> show tables ;
++----------------+
+| Tables_in_egan |
++----------------+
+| tbl_siswa      |
++----------------+
+1 row in set (0.001 sec)
+
+MariaDB [EGAN]> desc tbl_siswa ;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| id_siswa   | varchar(5)   | NO   | PRI | NULL    |       |
+| nama_siswa | varchar(50)  | YES  |     | NULL    |       |
+| alamat     | varchar(100) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+3 rows in set (0.048 sec)
+
+MariaDB [EGAN]> INSERT into tbl_siswa (id_siswa, nama_siswa, alamat) values ("1","egan","subang");
+Query OK, 1 row affected (0.096 sec)
+
+MariaDB [EGAN]> select * from tbl_siswa ;
++----------+------------+--------+
+| id_siswa | nama_siswa | alamat |
++----------+------------+--------+
+| 1        | egan       | subang |
++----------+------------+--------+
+1 row in set (0.003 sec)
+
+MariaDB [EGAN]>
